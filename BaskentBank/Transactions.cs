@@ -11,23 +11,31 @@ using Npgsql;
 namespace BaskentBank
 {
     public partial class Transactions : Form
-    {
+      {
+
+
+         
         NpgsqlConnection conn = new NpgsqlConnection("server=localhost;port=5432;database=postgres;user Id=postgres;password=31743174");
         public Transactions()
         {
             InitializeComponent();
         }
 
-        void CheckBalance()
+        public int CheckBalance(string Tc)
         {
             conn.Open();
-            string Query = "select +* from accinfo where miktar" + bakiyetext.Text + "";
+            string Query = "select miktar from accinfo where id='" + Tc + "'  ";
             NpgsqlCommand cmd = new NpgsqlCommand(Query, conn);
-            DataTable dt = new DataTable();
-            NpgsqlCommand sda = new NpgsqlCommand();
-            cmd.ExecuteNonQuery();
+            NpgsqlDataReader dr=cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                bakiyeText.Text = dr.GetValue(0).ToString();
+            }
+            int miktar =Convert.ToInt32(bakiyeText.Text);
 
             conn.Close();
+            return miktar;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -65,18 +73,15 @@ namespace BaskentBank
         }
         private void bakiyebutton_Click(object sender, EventArgs e)
         {
-            if (bakiyetext.Text == "")
+            if (TCtext.Text == "")
             {
                 MessageBox.Show("TC Numranızı Giriniz!");
             }
             else
             {
-                CheckBalance();
-                if (label16.Text == "hesap bakiyeniz")
-                {
-                    MessageBox.Show("Hesap bulunamadı!");
-                    bakiyetext.Text = "";
-                }
+                
+                CheckBalance(TCtext.Text);
+                
             }
         }
 
@@ -131,23 +136,23 @@ namespace BaskentBank
             }
             else
             {
-                ////Deposit();
-                //GetNewBalance();
-                //int newBalance = Balance + Convert.ToInt32(parayatırmiktartext.Text);
-                //try
-                //{
-                //    conn.Open();
-                //    NpgsqlCommand cmd = new NpgsqlCommand("Update accinfo set miktar=@MI where ID=@AcKey", conn);
-                //    cmd.Parameters.AddWithValue("@MI", newBalance);
-                //    cmd.Parameters.AddWithValue("@AcKey", parayatırhesaptext.Text);
-                //    cmd.ExecuteNonQuery();
-                //    MessageBox.Show("Money Deposit!!!");
-                //    conn.Close();
-                //}
-                //catch (Exception Ex)
-                //{
-                //    MessageBox.Show(Ex.Message);
-                //}
+                //Deposit();
+                
+                int newBalance = Convert.ToInt32(CheckBalance(parayatırhesaptext.Text)) + Convert.ToInt32(parayatırmiktartext.Text);
+                try
+                {
+                    conn.Open();
+                    NpgsqlCommand cmd = new NpgsqlCommand("Update accinfo set miktar=@MI where ID=@AcKey", conn);
+                    cmd.Parameters.AddWithValue("@MI", newBalance);
+                    cmd.Parameters.AddWithValue("@AcKey", parayatırhesaptext.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Money Deposit!!!");
+                    conn.Close();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
             }
         }
     }

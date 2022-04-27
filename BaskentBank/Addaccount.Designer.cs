@@ -345,6 +345,7 @@ namespace BaskentBank
             this.tctext.Name = "tctext";
             this.tctext.Size = new System.Drawing.Size(180, 31);
             this.tctext.TabIndex = 27;
+            this.tctext.TextChanged += new System.EventHandler(this.tctext_TextChanged);
             // 
             // label4
             // 

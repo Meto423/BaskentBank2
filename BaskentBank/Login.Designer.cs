@@ -52,6 +52,8 @@ namespace BaskentBank
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.girisbutton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -61,6 +63,7 @@ namespace BaskentBank
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -78,6 +81,7 @@ namespace BaskentBank
             this.label1.Size = new System.Drawing.Size(164, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "BASKENT BANK";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // kullanitext
             // 
@@ -187,6 +191,16 @@ namespace BaskentBank
             this.girisbutton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.girisbutton.Click += new System.EventHandler(this.girisbutton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(59, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 114);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "BAŞKENT BANK\'LI OLUN";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -207,6 +221,7 @@ namespace BaskentBank
             this.Name = "Login";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +252,6 @@ namespace BaskentBank
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuThinButton2 girisbutton;
+        private System.Windows.Forms.Button button1;
     }
 }

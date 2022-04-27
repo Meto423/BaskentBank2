@@ -10,16 +10,26 @@ using Npgsql;
 
 namespace BaskentBank
 {
+
+    
+
     public partial class Login : Form
     {
 
         NpgsqlConnection conn = new NpgsqlConnection("server=localhost;port=5432;database=postgres;user Id=postgres;password=31743174");
 
 
+        //public static string GetTc
+        //{
+        //    get { return GetTc; }
+        //    set { GetTc = value;}
+        //}
+
         public Login()
         {
             InitializeComponent();
         }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -70,6 +80,10 @@ namespace BaskentBank
                     if (dr.Read())
                     {
                         MessageBox.Show("SUCCESFULL");
+
+                        
+                        
+                        
                         Mainpage git = new Mainpage();
                         git.Show();
                         this.Hide();
@@ -128,9 +142,7 @@ namespace BaskentBank
 
 
 
-                    //Agents git = new Agents();
-                    //git.Show();
-                    //this.Hide();
+                    
                 }
             }
         }
@@ -138,6 +150,18 @@ namespace BaskentBank
         private void oturumturucb_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Addaccount git = new Addaccount();
+            git.Show();
+            this.Hide();
         }
     }
 }

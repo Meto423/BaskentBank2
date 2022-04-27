@@ -20,4 +20,9 @@ namespace BaskentBank
             Application.Run(new Login());
         }
     }
+
+   
+
+
+
 }

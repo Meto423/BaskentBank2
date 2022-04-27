@@ -32,6 +32,8 @@ namespace BaskentBank
             //conn.Close();
         }
 
+        
+
 
         private void Addaccount_Load(object sender, EventArgs e)
         {
@@ -44,7 +46,7 @@ namespace BaskentBank
         }
         private void Reset()
         {
-            conn.Close();
+            
             adtext.Clear();
             telefontext.Clear();
             soyadtext.Clear();
@@ -52,6 +54,8 @@ namespace BaskentBank
             tctext.Clear();
             gelirtext.Clear();
             cinsiyetcb.Dispose();
+            sifretext.Dispose();
+            sifredogrulamatext.Dispose();
         }
         private void kaydolb_Click(object sender, EventArgs e)
         {
@@ -80,11 +84,19 @@ namespace BaskentBank
                     cmd.Parameters.AddWithValue("@SIF", sifretext.Text);
                     cmd.ExecuteNonQuery();
 
+                    NpgsqlCommand cmd2 = new NpgsqlCommand("INSERT INTO \"accinfo\"(id,miktar,borc)VALUES(@ID,@MIK,@BORC)", conn);
+                    cmd2.Parameters.AddWithValue("@ID", tctext.Text);
+                    cmd2.Parameters.AddWithValue("@MIK", 0);
+                    cmd2.Parameters.AddWithValue("@BORC", 0);
+                    cmd2.ExecuteNonQuery();
+
+
                     MessageBox.Show("Başarıyla Kaydoldunuz!");
 
                     conn.Close();
                     Reset();
                     DisplayAcc();
+
                 }
                 catch (Exception Ex)
                 {
@@ -128,36 +140,14 @@ namespace BaskentBank
 
         private void iptalb_Click(object sender, EventArgs e)
         {
-            if (Key == 0)
-            {
-                MessageBox.Show("Select The Account");
-            }
-            else if (sifretext.Text != sifredogrulamatext.Text)
-            {
-                MessageBox.Show("Girdiğiniz şifre değerleri eşleşmiyor!");
-            }
-            else
-            {
-                try
-                {
-                    conn.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand("delete from userinformation where TC=@AcKey ", conn);
-                    cmd.Parameters.AddWithValue("@AcKey", Key);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Başarıyla Kaydoldunuz!");
-                    conn.Close();
-                    Reset();
-                    DisplayAcc();
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
 
-            }
+            Reset();
+            Login git = new Login();
+            git.Show();
+            this.Hide();
 
         }
-        int Key = 0;
+        
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -204,6 +194,11 @@ namespace BaskentBank
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void tctext_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

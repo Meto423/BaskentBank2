@@ -37,7 +37,7 @@ namespace BaskentBank
             this.çekbutton = new System.Windows.Forms.Button();
             this.bakiyebutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.bakiyetext = new System.Windows.Forms.TextBox();
+            this.TCtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -73,6 +73,7 @@ namespace BaskentBank
             this.label15 = new System.Windows.Forms.Label();
             this.paracekmiktar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bakiyeText = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -166,14 +167,14 @@ namespace BaskentBank
             this.label2.TabIndex = 33;
             this.label2.Text = "Hesap Bakiye Kontrolu";
             // 
-            // bakiyetext
+            // TCtext
             // 
-            this.bakiyetext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bakiyetext.Location = new System.Drawing.Point(63, 31);
-            this.bakiyetext.Name = "bakiyetext";
-            this.bakiyetext.Size = new System.Drawing.Size(180, 31);
-            this.bakiyetext.TabIndex = 32;
-            this.bakiyetext.TextChanged += new System.EventHandler(this.bakiyetext_TextChanged);
+            this.TCtext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TCtext.Location = new System.Drawing.Point(63, 31);
+            this.TCtext.Name = "TCtext";
+            this.TCtext.Size = new System.Drawing.Size(180, 31);
+            this.TCtext.TabIndex = 32;
+            this.TCtext.TextChanged += new System.EventHandler(this.bakiyetext_TextChanged);
             // 
             // label1
             // 
@@ -189,9 +190,10 @@ namespace BaskentBank
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.bakiyeText);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.bakiyebutton);
-            this.panel2.Controls.Add(this.bakiyetext);
+            this.panel2.Controls.Add(this.TCtext);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(324, 70);
             this.panel2.Name = "panel2";
@@ -579,6 +581,13 @@ namespace BaskentBank
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // bakiyeText
+            // 
+            this.bakiyeText.Location = new System.Drawing.Point(396, 39);
+            this.bakiyeText.Name = "bakiyeText";
+            this.bakiyeText.Size = new System.Drawing.Size(125, 27);
+            this.bakiyeText.TabIndex = 41;
+            // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -626,7 +635,7 @@ namespace BaskentBank
         private System.Windows.Forms.Button çekbutton;
         private System.Windows.Forms.Button bakiyebutton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox bakiyetext;
+        private System.Windows.Forms.TextBox TCtext;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -662,5 +671,6 @@ namespace BaskentBank
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cinsiyetcb;
+        private System.Windows.Forms.TextBox bakiyeText;
     }
 }
