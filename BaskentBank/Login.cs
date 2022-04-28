@@ -19,11 +19,7 @@ namespace BaskentBank
         NpgsqlConnection conn = new NpgsqlConnection("server=localhost;port=5432;database=postgres;user Id=postgres;password=31743174");
 
 
-        //public static string GetTc
-        //{
-        //    get { return GetTc; }
-        //    set { GetTc = value;}
-        //}
+       
 
         public Login()
         {
@@ -70,6 +66,8 @@ namespace BaskentBank
                     string username = kullanitext.Text;
                     string password = sifretext.Text;
 
+                    
+
                     NpgsqlCommand cmd = new NpgsqlCommand();
 
                     conn.Open();
@@ -84,7 +82,7 @@ namespace BaskentBank
                         
                         
                         
-                        Mainpage git = new Mainpage();
+                        Mainpage git = new Mainpage(username);
                         git.Show();
                         this.Hide();
                     }
@@ -114,11 +112,6 @@ namespace BaskentBank
                         Agents git = new Agents();
                         git.Show();
                         this.Hide();
-
-
-
-
-
                     }
                     else
                     {
@@ -162,6 +155,16 @@ namespace BaskentBank
             Addaccount git = new Addaccount();
             git.Show();
             this.Hide();
+        }
+
+        private void kullanitext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

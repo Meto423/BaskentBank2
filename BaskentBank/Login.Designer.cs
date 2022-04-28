@@ -31,6 +31,7 @@ namespace BaskentBank
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.kullanitext = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace BaskentBank
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.girisbutton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -69,6 +69,16 @@ namespace BaskentBank
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(214, 452);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(59, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 114);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "BAŞKENT BANK\'LI OLUN";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -87,9 +97,11 @@ namespace BaskentBank
             // 
             this.kullanitext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kullanitext.Location = new System.Drawing.Point(316, 221);
+            this.kullanitext.MaxLength = 11;
             this.kullanitext.Name = "kullanitext";
             this.kullanitext.Size = new System.Drawing.Size(260, 23);
             this.kullanitext.TabIndex = 2;
+            this.kullanitext.TextChanged += new System.EventHandler(this.kullanitext_TextChanged);
             // 
             // label2
             // 
@@ -99,9 +111,10 @@ namespace BaskentBank
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(316, 198);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Kullanıcı Adı";
+            this.label2.Text = "TC Kimlik NO";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -120,6 +133,7 @@ namespace BaskentBank
             this.sifretext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sifretext.Location = new System.Drawing.Point(316, 285);
             this.sifretext.Name = "sifretext";
+            this.sifretext.PasswordChar = '●';
             this.sifretext.Size = new System.Drawing.Size(260, 23);
             this.sifretext.TabIndex = 4;
             this.sifretext.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -191,18 +205,9 @@ namespace BaskentBank
             this.girisbutton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.girisbutton.Click += new System.EventHandler(this.girisbutton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(59, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 114);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "BAŞKENT BANK\'LI OLUN";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Login
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -219,6 +224,7 @@ namespace BaskentBank
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);

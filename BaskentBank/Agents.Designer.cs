@@ -46,6 +46,12 @@ namespace BaskentBank
             this.soyadtext = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cinsiyetcb = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tctext = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.gelirtext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,54 +64,58 @@ namespace BaskentBank
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(864, 107);
+            this.label7.Location = new System.Drawing.Point(332, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 45;
             this.label7.Text = "Cep Telefonu";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // telefontext
             // 
             this.telefontext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.telefontext.Location = new System.Drawing.Point(864, 130);
+            this.telefontext.Location = new System.Drawing.Point(332, 130);
             this.telefontext.Name = "telefontext";
             this.telefontext.Size = new System.Drawing.Size(180, 31);
             this.telefontext.TabIndex = 44;
+            this.telefontext.TextChanged += new System.EventHandler(this.telefontext_TextChanged);
             // 
             // iptalb
             // 
             this.iptalb.BackColor = System.Drawing.Color.Teal;
             this.iptalb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.iptalb.ForeColor = System.Drawing.Color.Transparent;
-            this.iptalb.Location = new System.Drawing.Point(688, 279);
+            this.iptalb.Location = new System.Drawing.Point(773, 285);
             this.iptalb.Name = "iptalb";
             this.iptalb.Size = new System.Drawing.Size(117, 44);
             this.iptalb.TabIndex = 43;
             this.iptalb.Text = "İptal";
             this.iptalb.UseVisualStyleBackColor = false;
+            this.iptalb.Click += new System.EventHandler(this.iptalb_Click);
             // 
             // duzenleb
             // 
             this.duzenleb.BackColor = System.Drawing.Color.Teal;
             this.duzenleb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.duzenleb.ForeColor = System.Drawing.Color.Transparent;
-            this.duzenleb.Location = new System.Drawing.Point(508, 279);
+            this.duzenleb.Location = new System.Drawing.Point(538, 285);
             this.duzenleb.Name = "duzenleb";
             this.duzenleb.Size = new System.Drawing.Size(117, 44);
             this.duzenleb.TabIndex = 42;
             this.duzenleb.Text = "Düzenle";
             this.duzenleb.UseVisualStyleBackColor = false;
+            this.duzenleb.Click += new System.EventHandler(this.duzenleb_Click);
             // 
             // kaydolb
             // 
             this.kaydolb.BackColor = System.Drawing.Color.Teal;
             this.kaydolb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kaydolb.ForeColor = System.Drawing.Color.Transparent;
-            this.kaydolb.Location = new System.Drawing.Point(319, 279);
+            this.kaydolb.Location = new System.Drawing.Point(298, 285);
             this.kaydolb.Name = "kaydolb";
             this.kaydolb.Size = new System.Drawing.Size(117, 44);
             this.kaydolb.TabIndex = 39;
-            this.kaydolb.Text = "Kaydol";
+            this.kaydolb.Text = "Kaydet";
             this.kaydolb.UseVisualStyleBackColor = false;
             this.kaydolb.Click += new System.EventHandler(this.kaydolb_Click);
             // 
@@ -198,7 +208,7 @@ namespace BaskentBank
             // soyadtext
             // 
             this.soyadtext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.soyadtext.Location = new System.Drawing.Point(332, 130);
+            this.soyadtext.Location = new System.Drawing.Point(109, 194);
             this.soyadtext.Name = "soyadtext";
             this.soyadtext.Size = new System.Drawing.Size(180, 31);
             this.soyadtext.TabIndex = 35;
@@ -209,7 +219,7 @@ namespace BaskentBank
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(332, 107);
+            this.label3.Location = new System.Drawing.Point(109, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 36;
@@ -218,12 +228,81 @@ namespace BaskentBank
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(158, 366);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 357);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(1060, 261);
             this.dataGridView1.TabIndex = 51;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(332, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Cinsiyet";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // cinsiyetcb
+            // 
+            this.cinsiyetcb.FormattingEnabled = true;
+            this.cinsiyetcb.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın",
+            "Belirtmek istemiyorum",
+            "Diğer"});
+            this.cinsiyetcb.Location = new System.Drawing.Point(332, 194);
+            this.cinsiyetcb.Name = "cinsiyetcb";
+            this.cinsiyetcb.Size = new System.Drawing.Size(151, 28);
+            this.cinsiyetcb.TabIndex = 53;
+            this.cinsiyetcb.SelectedIndexChanged += new System.EventHandler(this.cinsiyetcb_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(861, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 20);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "TC Kimlik NO";
+            // 
+            // tctext
+            // 
+            this.tctext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tctext.Location = new System.Drawing.Point(861, 130);
+            this.tctext.Name = "tctext";
+            this.tctext.Size = new System.Drawing.Size(180, 31);
+            this.tctext.TabIndex = 55;
+            this.tctext.TextChanged += new System.EventHandler(this.tctext_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label8.Location = new System.Drawing.Point(861, 171);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(150, 20);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Aylık Ortalama Gelir";
+            // 
+            // gelirtext
+            // 
+            this.gelirtext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gelirtext.Location = new System.Drawing.Point(861, 197);
+            this.gelirtext.Name = "gelirtext";
+            this.gelirtext.Size = new System.Drawing.Size(180, 31);
+            this.gelirtext.TabIndex = 57;
             // 
             // Agents
             // 
@@ -231,6 +310,12 @@ namespace BaskentBank
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1116, 643);
+            this.Controls.Add(this.gelirtext);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tctext);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cinsiyetcb);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -277,5 +362,11 @@ namespace BaskentBank
         private System.Windows.Forms.TextBox soyadtext;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cinsiyetcb;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tctext;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox gelirtext;
     }
 }

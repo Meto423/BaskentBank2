@@ -10,8 +10,11 @@ namespace BaskentBank
 {
     public partial class Mainpage : Form
     {
-        public Mainpage()
+        private string _tc;
+            
+        public Mainpage(string tc)
         {
+            _tc = tc;
             InitializeComponent();
         }
 
@@ -22,28 +25,33 @@ namespace BaskentBank
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Addaccount git = new Addaccount();
+            Form2 git = new Form2(_tc);
             git.Show();
-            this.Hide();
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Transactions git = new Transactions();
+            Transactions git = new Transactions(_tc);
             git.Show();
-            this.Hide();
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Setting git = new Setting();
             git.Show();
-            //this.Hide();
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            Login git = new Login();
+            git.Show();
+            this.Hide();
+
+
         }
     }
 }

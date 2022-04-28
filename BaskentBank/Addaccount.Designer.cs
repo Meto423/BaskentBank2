@@ -133,6 +133,7 @@ namespace BaskentBank
             this.adtext.Name = "adtext";
             this.adtext.Size = new System.Drawing.Size(180, 31);
             this.adtext.TabIndex = 12;
+            this.adtext.TextChanged += new System.EventHandler(this.adtext_TextChanged);
             // 
             // label3
             // 

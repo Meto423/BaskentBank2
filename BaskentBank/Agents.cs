@@ -28,7 +28,7 @@ namespace BaskentBank
         private void DisplayAgents()
         {
             conn.Open();
-            string Query = "select * from accinfo ";
+            string Query = "select * from userinformation ";
             NpgsqlDataAdapter sda = new NpgsqlDataAdapter(Query, conn);
             NpgsqlCommandBuilder Buider = new NpgsqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -49,6 +49,46 @@ namespace BaskentBank
         }
 
         private void Agents_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefontext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tctext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cinsiyetcb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void duzenleb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iptalb_Click(object sender, EventArgs e)
         {
 
         }

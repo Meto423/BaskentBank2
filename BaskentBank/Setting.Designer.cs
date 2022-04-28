@@ -39,6 +39,7 @@ namespace BaskentBank
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.iptal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,16 +85,17 @@ namespace BaskentBank
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(122, 189);
+            this.label3.Location = new System.Drawing.Point(122, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(27, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "SOYAD";
+            this.label3.Text = "TC";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(122, 212);
+            this.textBox2.Location = new System.Drawing.Point(122, 116);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(180, 31);
             this.textBox2.TabIndex = 18;
@@ -104,7 +106,7 @@ namespace BaskentBank
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(122, 114);
+            this.label2.Location = new System.Drawing.Point(122, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 23);
             this.label2.TabIndex = 17;
@@ -113,7 +115,7 @@ namespace BaskentBank
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(122, 142);
+            this.textBox1.Location = new System.Drawing.Point(122, 222);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 31);
             this.textBox1.TabIndex = 16;
@@ -123,12 +125,13 @@ namespace BaskentBank
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(388, 165);
+            this.button1.Location = new System.Drawing.Point(423, 129);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 44);
             this.button1.TabIndex = 20;
             this.button1.Text = "Onayla";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -143,12 +146,26 @@ namespace BaskentBank
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // iptal
+            // 
+            this.iptal.BackColor = System.Drawing.Color.Teal;
+            this.iptal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.iptal.ForeColor = System.Drawing.Color.Transparent;
+            this.iptal.Location = new System.Drawing.Point(436, 206);
+            this.iptal.Name = "iptal";
+            this.iptal.Size = new System.Drawing.Size(92, 37);
+            this.iptal.TabIndex = 22;
+            this.iptal.Text = "İptal";
+            this.iptal.UseVisualStyleBackColor = false;
+            this.iptal.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(680, 403);
+            this.Controls.Add(this.iptal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -161,6 +178,7 @@ namespace BaskentBank
             this.Name = "Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
+            this.Load += new System.EventHandler(this.Setting_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -180,5 +198,6 @@ namespace BaskentBank
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button iptal;
     }
 }

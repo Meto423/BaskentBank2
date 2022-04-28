@@ -40,13 +40,14 @@ namespace BaskentBank
             this.TCtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bakiyeText = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cinsiyetcb = new System.Windows.Forms.ComboBox();
+            this.parayatırmaturu = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.yatırbutton = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@ namespace BaskentBank
             this.label15 = new System.Windows.Forms.Label();
             this.paracekmiktar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bakiyeText = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -201,6 +201,14 @@ namespace BaskentBank
             this.panel2.TabIndex = 52;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // bakiyeText
+            // 
+            this.bakiyeText.Location = new System.Drawing.Point(396, 39);
+            this.bakiyeText.Name = "bakiyeText";
+            this.bakiyeText.Size = new System.Drawing.Size(125, 27);
+            this.bakiyeText.TabIndex = 41;
+            this.bakiyeText.TextChanged += new System.EventHandler(this.bakiyeText_TextChanged_1);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -225,6 +233,7 @@ namespace BaskentBank
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(497, 189);
             this.panel4.TabIndex = 54;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label9
             // 
@@ -261,7 +270,7 @@ namespace BaskentBank
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.cinsiyetcb);
+            this.panel5.Controls.Add(this.parayatırmaturu);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.yatırbutton);
@@ -274,17 +283,17 @@ namespace BaskentBank
             this.panel5.Size = new System.Drawing.Size(497, 189);
             this.panel5.TabIndex = 56;
             // 
-            // cinsiyetcb
+            // parayatırmaturu
             // 
-            this.cinsiyetcb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cinsiyetcb.FormattingEnabled = true;
-            this.cinsiyetcb.Items.AddRange(new object[] {
+            this.parayatırmaturu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.parayatırmaturu.FormattingEnabled = true;
+            this.parayatırmaturu.Items.AddRange(new object[] {
             "Hesaba Yatırma",
             "Kredi Borcu Ödeme"});
-            this.cinsiyetcb.Location = new System.Drawing.Point(188, 96);
-            this.cinsiyetcb.Name = "cinsiyetcb";
-            this.cinsiyetcb.Size = new System.Drawing.Size(180, 31);
-            this.cinsiyetcb.TabIndex = 54;
+            this.parayatırmaturu.Location = new System.Drawing.Point(188, 96);
+            this.parayatırmaturu.Name = "parayatırmaturu";
+            this.parayatırmaturu.Size = new System.Drawing.Size(180, 31);
+            this.parayatırmaturu.TabIndex = 54;
             // 
             // label17
             // 
@@ -330,6 +339,7 @@ namespace BaskentBank
             this.parayatırhesaptext.Name = "parayatırhesaptext";
             this.parayatırhesaptext.Size = new System.Drawing.Size(180, 31);
             this.parayatırhesaptext.TabIndex = 45;
+            this.parayatırhesaptext.TextChanged += new System.EventHandler(this.parayatırhesaptext_TextChanged);
             // 
             // label11
             // 
@@ -393,6 +403,7 @@ namespace BaskentBank
             this.gönderilenarabutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gönderilenarabutton.TabIndex = 55;
             this.gönderilenarabutton.TabStop = false;
+            this.gönderilenarabutton.Click += new System.EventHandler(this.gönderilenarabutton_Click);
             // 
             // gonderenarabutton
             // 
@@ -405,6 +416,7 @@ namespace BaskentBank
             this.gonderenarabutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gonderenarabutton.TabIndex = 54;
             this.gonderenarabutton.TabStop = false;
+            this.gonderenarabutton.Click += new System.EventHandler(this.gonderenarabutton_Click);
             // 
             // label6
             // 
@@ -449,6 +461,7 @@ namespace BaskentBank
             this.transferbutton.TabIndex = 42;
             this.transferbutton.Text = "gönder";
             this.transferbutton.UseVisualStyleBackColor = false;
+            this.transferbutton.Click += new System.EventHandler(this.transferbutton_Click);
             // 
             // gonderentext
             // 
@@ -457,6 +470,7 @@ namespace BaskentBank
             this.gonderentext.Name = "gonderentext";
             this.gonderentext.Size = new System.Drawing.Size(180, 31);
             this.gonderentext.TabIndex = 45;
+            this.gonderentext.TextChanged += new System.EventHandler(this.gonderentext_TextChanged);
             // 
             // label4
             // 
@@ -502,6 +516,7 @@ namespace BaskentBank
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(497, 195);
             this.panel6.TabIndex = 58;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label13
             // 
@@ -526,6 +541,7 @@ namespace BaskentBank
             this.krediçekbutton.TabIndex = 42;
             this.krediçekbutton.Text = "ÇEK";
             this.krediçekbutton.UseVisualStyleBackColor = false;
+            this.krediçekbutton.Click += new System.EventHandler(this.krediçekbutton_Click);
             // 
             // kredihesaptext
             // 
@@ -567,6 +583,7 @@ namespace BaskentBank
             this.paracekmiktar.Name = "paracekmiktar";
             this.paracekmiktar.Size = new System.Drawing.Size(180, 31);
             this.paracekmiktar.TabIndex = 49;
+            this.paracekmiktar.TextChanged += new System.EventHandler(this.paracekmiktar_TextChanged);
             // 
             // pictureBox1
             // 
@@ -580,13 +597,6 @@ namespace BaskentBank
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // bakiyeText
-            // 
-            this.bakiyeText.Location = new System.Drawing.Point(396, 39);
-            this.bakiyeText.Name = "bakiyeText";
-            this.bakiyeText.Size = new System.Drawing.Size(125, 27);
-            this.bakiyeText.TabIndex = 41;
             // 
             // Transactions
             // 
@@ -606,6 +616,7 @@ namespace BaskentBank
             this.Name = "Transactions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transactions";
+            this.Load += new System.EventHandler(this.Transactions_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -650,8 +661,6 @@ namespace BaskentBank
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox parayatırmiktartext;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox gönderilenarabutton;
-        private System.Windows.Forms.PictureBox gonderenarabutton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox transfermiktartext;
         private System.Windows.Forms.Label label3;
@@ -670,7 +679,9 @@ namespace BaskentBank
         private System.Windows.Forms.TextBox paracekmiktar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cinsiyetcb;
+        private System.Windows.Forms.ComboBox parayatırmaturu;
         private System.Windows.Forms.TextBox bakiyeText;
+        private System.Windows.Forms.PictureBox gönderilenarabutton;
+        private System.Windows.Forms.PictureBox gonderenarabutton;
     }
 }

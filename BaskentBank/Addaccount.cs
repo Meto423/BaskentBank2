@@ -10,11 +10,12 @@ using Npgsql;
 
 namespace BaskentBank
 {
+    
     public partial class Addaccount : Form
     {
         NpgsqlConnection conn = new NpgsqlConnection("server=localhost;port=5432;database=postgres;user Id=postgres;password=31743174");
 
-
+        
         public Addaccount()
         {
             InitializeComponent();
@@ -197,6 +198,11 @@ namespace BaskentBank
         }
 
         public void tctext_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adtext_TextChanged(object sender, EventArgs e)
         {
 
         }
