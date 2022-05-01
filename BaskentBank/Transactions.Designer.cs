@@ -106,6 +106,7 @@ namespace BaskentBank
             this.paraçekmiktartext.Name = "paraçekmiktartext";
             this.paraçekmiktartext.Size = new System.Drawing.Size(180, 31);
             this.paraçekmiktartext.TabIndex = 49;
+            this.paraçekmiktartext.TextChanged += new System.EventHandler(this.paraçekmiktartext_TextChanged);
             // 
             // label7
             // 

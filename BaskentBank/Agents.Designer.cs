@@ -52,10 +52,12 @@ namespace BaskentBank
             this.tctext = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gelirtext = new System.Windows.Forms.TextBox();
+            this.gonderenarabutton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gonderenarabutton)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -89,7 +91,7 @@ namespace BaskentBank
             this.iptalb.Name = "iptalb";
             this.iptalb.Size = new System.Drawing.Size(117, 44);
             this.iptalb.TabIndex = 43;
-            this.iptalb.Text = "İptal";
+            this.iptalb.Text = "Hesabı Sil";
             this.iptalb.UseVisualStyleBackColor = false;
             this.iptalb.Click += new System.EventHandler(this.iptalb_Click);
             // 
@@ -98,7 +100,7 @@ namespace BaskentBank
             this.duzenleb.BackColor = System.Drawing.Color.Teal;
             this.duzenleb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.duzenleb.ForeColor = System.Drawing.Color.Transparent;
-            this.duzenleb.Location = new System.Drawing.Point(538, 285);
+            this.duzenleb.Location = new System.Drawing.Point(290, 285);
             this.duzenleb.Name = "duzenleb";
             this.duzenleb.Size = new System.Drawing.Size(117, 44);
             this.duzenleb.TabIndex = 42;
@@ -111,11 +113,11 @@ namespace BaskentBank
             this.kaydolb.BackColor = System.Drawing.Color.Teal;
             this.kaydolb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kaydolb.ForeColor = System.Drawing.Color.Transparent;
-            this.kaydolb.Location = new System.Drawing.Point(298, 285);
+            this.kaydolb.Location = new System.Drawing.Point(538, 285);
             this.kaydolb.Name = "kaydolb";
             this.kaydolb.Size = new System.Drawing.Size(117, 44);
             this.kaydolb.TabIndex = 39;
-            this.kaydolb.Text = "Kaydet";
+            this.kaydolb.Text = "Sıfırla";
             this.kaydolb.UseVisualStyleBackColor = false;
             this.kaydolb.Click += new System.EventHandler(this.kaydolb_Click);
             // 
@@ -269,16 +271,17 @@ namespace BaskentBank
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(861, 107);
+            this.label9.Location = new System.Drawing.Point(831, 107);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 54;
             this.label9.Text = "TC Kimlik NO";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // tctext
             // 
             this.tctext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tctext.Location = new System.Drawing.Point(861, 130);
+            this.tctext.Location = new System.Drawing.Point(831, 130);
             this.tctext.Name = "tctext";
             this.tctext.Size = new System.Drawing.Size(180, 31);
             this.tctext.TabIndex = 55;
@@ -290,7 +293,7 @@ namespace BaskentBank
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(861, 171);
+            this.label8.Location = new System.Drawing.Point(831, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 20);
             this.label8.TabIndex = 56;
@@ -299,10 +302,23 @@ namespace BaskentBank
             // gelirtext
             // 
             this.gelirtext.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gelirtext.Location = new System.Drawing.Point(861, 197);
+            this.gelirtext.Location = new System.Drawing.Point(831, 194);
             this.gelirtext.Name = "gelirtext";
             this.gelirtext.Size = new System.Drawing.Size(180, 31);
             this.gelirtext.TabIndex = 57;
+            // 
+            // gonderenarabutton
+            // 
+            this.gonderenarabutton.BackColor = System.Drawing.Color.Teal;
+            this.gonderenarabutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.gonderenarabutton.Image = ((System.Drawing.Image)(resources.GetObject("gonderenarabutton.Image")));
+            this.gonderenarabutton.Location = new System.Drawing.Point(1039, 130);
+            this.gonderenarabutton.Name = "gonderenarabutton";
+            this.gonderenarabutton.Size = new System.Drawing.Size(32, 31);
+            this.gonderenarabutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gonderenarabutton.TabIndex = 58;
+            this.gonderenarabutton.TabStop = false;
+            this.gonderenarabutton.Click += new System.EventHandler(this.gonderenarabutton_Click);
             // 
             // Agents
             // 
@@ -310,6 +326,7 @@ namespace BaskentBank
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1116, 643);
+            this.Controls.Add(this.gonderenarabutton);
             this.Controls.Add(this.gelirtext);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tctext);
@@ -340,6 +357,7 @@ namespace BaskentBank
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gonderenarabutton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +386,6 @@ namespace BaskentBank
         private System.Windows.Forms.TextBox tctext;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox gelirtext;
+        private System.Windows.Forms.PictureBox gonderenarabutton;
     }
 }

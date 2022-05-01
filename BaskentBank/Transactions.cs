@@ -17,6 +17,21 @@ namespace BaskentBank
          
         NpgsqlConnection conn = new NpgsqlConnection("server=localhost;port=5432;database=postgres;user Id=postgres;password=31743174");
 
+        public bool IsDigit(string s)
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                if (s[i] == 0 || s[i] == 1 || s[i] == 2 || s[i] == 3 || s[i] == 4 || s[i] == 4 || s[i] == 5 || s[i] == 6 || s[i] == 7 || s[i] == 8 || s[i] == 9)
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public int CheckDebt(string Tc)
         {
 
@@ -81,6 +96,11 @@ namespace BaskentBank
             {
                 MessageBox.Show("Lütfen Boş Değer Bırakmayınız!");
             }
+            else if (Convert.ToInt32(paraçekmiktartext.Text) <= 0)
+            {
+                MessageBox.Show("Geçersiz miktar!");
+            }
+            
             else
             {
                 //Deposit();
@@ -185,6 +205,11 @@ namespace BaskentBank
             {
                 MessageBox.Show("Lütfen Boş Değer Bırakmayınız!");
             }
+            else if (Convert.ToInt32(parayatırmiktartext.Text) <= 0)
+            {
+                MessageBox.Show("Geçersiz miktar!");
+            }
+            
             else
             {
                 if (parayatırmaturu.SelectedIndex==-1)
@@ -193,7 +218,11 @@ namespace BaskentBank
                 }
                 else if (parayatırmaturu.SelectedIndex == 0)
                 {
-                    int newBalance = Convert.ToInt32(CheckBalance(parayatırhesaptext.Text)) + Convert.ToInt32(parayatırmiktartext.Text);
+                   
+                        int newBalance = Convert.ToInt32(CheckBalance(parayatırhesaptext.Text)) + Convert.ToInt32(parayatırmiktartext.Text);
+                    
+              
+                    
                     try
                     {
                         conn.Open();
@@ -261,6 +290,11 @@ namespace BaskentBank
             {
                 MessageBox.Show("Lütfen Boş Değer Bırakmayınız!");
             }
+            else if (Convert.ToInt32(transfermiktartext.Text) <= 0)
+            {
+                MessageBox.Show("Geçersiz miktar!");
+            }
+            
             else
             {
 
@@ -303,6 +337,11 @@ namespace BaskentBank
             {
                 MessageBox.Show("Lütfen Boş Değer Bırakmayınız!");
             }
+            else if (Convert.ToInt32(paracekmiktar.Text) <= 0)
+            {
+                MessageBox.Show("Geçersiz miktar!");
+            }
+            
             else
             {
                 int newBalance = Convert.ToInt32(CheckBalance(kredihesaptext.Text)) + Convert.ToInt32(paracekmiktar.Text);
@@ -405,6 +444,11 @@ namespace BaskentBank
         }
 
         private void bakiyeText_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paraçekmiktartext_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -39,8 +39,10 @@ namespace BaskentBank
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Setting git = new Setting();
+            Setting git = new Setting(_tc);
             git.Show();
+
+
             
         }
 
@@ -49,7 +51,7 @@ namespace BaskentBank
 
             Login git = new Login();
             git.Show();
-            this.Hide();
+            
 
 
         }

@@ -11,8 +11,10 @@ namespace BaskentBank
 {
     public partial class Setting : Form
     {
-        public Setting()
+        private string _tc;
+        public Setting(string tc)
         {
+            _tc = tc;
             InitializeComponent();
         }
 
@@ -33,7 +35,7 @@ namespace BaskentBank
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Mainpage git = new Mainpage("");
+            Mainpage git = new Mainpage(_tc);
             git.Show();
             this.Hide();
         }
@@ -46,13 +48,18 @@ namespace BaskentBank
             NpgsqlCommand cmd = new NpgsqlCommand("Update userinformation Set sifre=@sifre Where tcno='" + textBox2.Text + "'", conn);
             cmd.Parameters.AddWithValue("@sifre", textBox1.Text);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Successfull");
+            MessageBox.Show("Şire Başarıyla Değiştirildi!");
             conn.Close();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.MaxLength = 11;
         }
     }
 }

@@ -77,7 +77,7 @@ namespace BaskentBank
 
                     if (dr.Read())
                     {
-                        MessageBox.Show("SUCCESFULL");
+                        MessageBox.Show("Giriş Başarılı!!");
 
                         
                         
@@ -88,7 +88,7 @@ namespace BaskentBank
                     }
                     else
                     {
-                        MessageBox.Show("NO MATCH");
+                        MessageBox.Show("Yanlış şifre veya tc!!!");
                     }
                     conn.Close();
 

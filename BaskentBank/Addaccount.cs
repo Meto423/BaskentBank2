@@ -19,21 +19,27 @@ namespace BaskentBank
         public Addaccount()
         {
             InitializeComponent();
-            DisplayAcc();
+            
         }
-        private void DisplayAcc()
+        public bool IsDigit(string s)
         {
-            //conn.Open();
-            //string Query = "select * from userinformation ";
-            //NpgsqlDataAdapter sda = new NpgsqlDataAdapter(Query, conn);
-            //NpgsqlCommandBuilder Buider = new NpgsqlCommandBuilder(sda);
-            //var ds = new DataSet();
-            //sda.Fill(ds);
-            //AccountDGV.DataSource = ds.Tables[0];
-            //conn.Close();
+            
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '0'|| s[i] == '1' || s[i] == '2' || s[i] == '3' || s[i] == '4' ||  s[i] == '5' || s[i] == '6' || s[i] == '7' || s[i] == '8' || s[i] == '9')
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        
+
+
 
 
         private void Addaccount_Load(object sender, EventArgs e)
@@ -47,7 +53,7 @@ namespace BaskentBank
         }
         private void Reset()
         {
-            
+   
             adtext.Clear();
             telefontext.Clear();
             soyadtext.Clear();
@@ -63,6 +69,19 @@ namespace BaskentBank
             if (adtext.Text == "" || soyadtext.Text == "" || telefontext.Text == "" || cinsiyetcb.SelectedIndex == -1 || adrestext.Text == "" || tctext.Text == "" || gelirtext.Text == "" || sifretext.Text == "" || sifredogrulamatext.Text == "")
             {
                 MessageBox.Show("Lütfen Boş Değer Bırakmayınız!");
+            }
+            else if (Convert.ToInt32(gelirtext.Text) <= 0)
+            {
+                MessageBox.Show("Geçersiz miktar!");
+            }
+            else if (!IsDigit(gelirtext.Text))
+            {
+                MessageBox.Show("Geçersiz karakter!");
+                gelirtext.Clear();
+            }
+            else if (!IsDigit(tctext.Text)){
+                MessageBox.Show("Geçersiz Karakter Girmeyiniz!");
+                tctext.Clear();
             }
             else if (sifretext.Text != sifredogrulamatext.Text)
             {
@@ -96,7 +115,7 @@ namespace BaskentBank
 
                     conn.Close();
                     Reset();
-                    DisplayAcc();
+                    
 
                 }
                 catch (Exception Ex)
@@ -152,21 +171,7 @@ namespace BaskentBank
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //tctext.Text = DataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            //adtext.Text = AccountDGV.SelectedRows[0].Cells[2].Value.ToString();
-            //soyadtext.Text = AccountDGV.SelectedRows[0].Cells[3].Value.ToString();
-            //telefontext.Text = AccountDGV.SelectedRows[0].Cells[4].Value.ToString();
-            //cinsiyetcb.SelectedItem = AccountDGV.SelectedRows[0].Cells[5].Value.ToString();
-            //adrestext.Text = AccountDGV.SelectedRows[0].Cells[6].Value.ToString();
-            //gelirtext.Text = AccountDGV.SelectedRows[0].Cells[1].Value.ToString();
-            //if (tctext.Text == "")
-            //{
-            //    Key = 0;
-            //}
-            //else
-            //{
-            //    Key = Convert.ToInt32(AccountGV.SelectedRows[0].Cells[1].Value.ToString());
-            //}
+            
 
         }
 
@@ -199,7 +204,7 @@ namespace BaskentBank
 
         public void tctext_TextChanged(object sender, EventArgs e)
         {
-
+            tctext.MaxLength = 11;
         }
 
         private void adtext_TextChanged(object sender, EventArgs e)
